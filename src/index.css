@@ -1,0 +1,173 @@
+/* Body styling */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  line-height: 1.6;
+  padding: 20px;
+  background-color: #f4f4f4;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+/* Centering content in login page */
+.login-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.login-form {
+  background-color: #f4f4f4;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+/* Style for input fields */
+input {
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+/* Registration Form Button Styling */
+
+
+
+/* Global Button Styling for Login and Registration Pages */
+button {
+  width: 150px; /* Smaller button width */
+  padding: 10px;
+  background-color: purple; /* Purple button color */
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  text-align: center;
+}
+
+button:hover {
+  background-color: #7a3e9b; /* Darker purple on hover */
+}
+
+/* Style for buttons in login and registration forms */
+.login-form button,
+.register-form button {
+  width: 120px; /* Smaller width */
+  padding: 8px; /* Less padding */
+  background-color: purple; /* Purple button color */
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin: 10px; /* Margin for spacing */
+  display: inline-block; /* To place them side by side */
+  text-align: center;
+}
+
+.login-form button:hover,
+.register-form button:hover {
+  background-color: #7a3e9b; /* Darker purple on hover */
+}
+
+/* Align buttons horizontally */
+button {
+  display: inline-block;
+}
+
+
+
+
+/* Navigation bar styling */
+/* App.css or index.css */
+
+/* Resetting margins and padding for a clean layout */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  line-height: 1.6;
+  padding: 20px;
+  background-color: #f4f4f4;
+}
+
+
+/* Sidebar Styling */
+
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 250px;
+  height: 100vh;
+  background-color: #333;
+  padding-top: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.sidebar .logo {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.sidebar .logo img {
+  max-width: 150px;
+}
+
+.sidebar a {
+  padding: 15px;
+  text-align: left;
+  text-decoration: none;
+  font-size: 18px;
+  color: white;
+  display: block;
+}
+
+.sidebar a:hover {
+  background-color: #575757;
+}
+
+/* Style the login/register buttons separately */
+.sidebar a:last-child {
+  margin-top: auto;
+}
+
+
+/* Main Content Adjustments */
+.main-content {
+  margin-left: 250px; /* Offset for the sidebar */
+  padding: 20px;
+}
+
+.navbar {
+  height: 60px;
+  background-color: #f4f4f4;
+  text-align: center;
+  line-height: 60px;
+  font-size: 24px;
+  font-weight: bold;
+}
+
+
+/* Additional global styles can be added below */
+
+
+

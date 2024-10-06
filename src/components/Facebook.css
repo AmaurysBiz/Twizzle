@@ -1,0 +1,30 @@
+.facebook-container {
+    padding: 20px;
+    max-width: 900px;
+    margin: 0 auto;
+  }
+  
+  .connect-button, .disconnect-button, .post-button {
+    padding: 10px 20px;
+    background-color: purple;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-bottom: 20px;
+  }
+  
+  .connect-button:hover, .disconnect-button:hover, .post-button:hover {
+    background-color: #7a3e9b;
+  }
+  
+  .facebook-data {
+    margin-top: 20px;
+  }
+  
+  .new-post textarea {
+    width: 100%;
+    margin-bottom: 15px;
+    padding: 10px;
+  }
+  

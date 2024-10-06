@@ -1,0 +1,47 @@
+.video-canvas-container {
+    padding: 20px;
+    max-width: 900px;
+    margin: 0 auto;
+  }
+  
+  .video-form {
+    margin-bottom: 20px;
+  }
+  
+  .video-form label {
+    display: block;
+    margin-bottom: 5px;
+  }
+  
+  .video-form textarea, 
+  .video-form input[type="file"], 
+  .video-form select, 
+  .video-form input[type="datetime-local"] {
+    width: 100%;
+    margin-bottom: 15px;
+  }
+  
+  .video-preview {
+    background-color: #f9f9f9;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  .video-preview video {
+    margin-top: 10px;
+  }
+  
+  .submit-button {
+    padding: 10px 20px;
+    background-color: purple;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .submit-button:hover {
+    background-color: #7a3e9b;
+  }
+  

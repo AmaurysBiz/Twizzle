@@ -1,0 +1,47 @@
+.analytics-container {
+    padding: 20px;
+    max-width: 900px;
+    margin: 0 auto;
+  }
+  
+  .analytics-overview, .charts-section, .social-media-breakdown, .top-posts, .export-section {
+    margin-bottom: 30px;
+  }
+  
+  .stats p, .platform-stats p, .top-posts ul {
+    margin: 10px 0;
+  }
+  
+  .chart-placeholder {
+    background-color: #f0f0f0;
+    height: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+    border: 2px dashed #ccc;
+  }
+  
+  .export-button {
+    margin-right: 10px;
+    padding: 10px 20px;
+    background-color: purple;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .export-button:hover {
+    background-color: #7a3e9b;
+  }
+  
+  ul {
+    list-style: none;
+    padding-left: 0;
+  }
+  
+  ul li {
+    margin-bottom: 10px;
+  }
+  

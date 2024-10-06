@@ -1,0 +1,41 @@
+.home-container {
+  padding: 20px;
+}
+
+.welcome-section {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.analytics-overview, .upcoming-posts, .viral-content, .shortcuts, .profile-overview, .notifications {
+  margin-bottom: 30px;
+}
+
+.stats p {
+  margin: 5px 0;
+}
+
+.shortcut-button {
+  display: inline-block;
+  margin-right: 10px;
+  padding: 10px 20px;
+  background-color: purple;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.shortcut-button:hover {
+  background-color: #7a3e9b;
+}
+
+ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+li {
+  margin: 10px 0;
+}
