@@ -7,7 +7,7 @@ require("./DB/Conn");
 const PORT = 8080;
 
 const app = express();
-app.use(express.json());
+app.use(express.json({limit: '50mb'}));
 app.use(cors());
 
 
@@ -57,6 +57,39 @@ app.post("/login" , async (req, res)=>{
         }
     } catch (error) {
         res.status(404).send(error);
+    }
+})
+
+
+app.get("/users", async (req, res) => {
+    try {
+        const users = await Auth.find();
+        res.status(200).send(users);
+    } catch (error) {
+        res.status(404).send(error);
+    }
+})
+
+
+app.get("/users/:id", async (req, res) => {
+    try {
+        const id = req.params.id;
+        const users = await Auth.findById(id);
+        res.status(200).send(users);
+    } catch (error) {
+        res.status(404).send(error);
+    }
+})
+
+
+app.patch("/users/:id", async (req, res)=>{
+    try {
+        const id = req.params.id;
+        const users = await Auth.findByIdAndUpdate(id, req.body, {new: true});
+        res.status(200).send(users);
+    } catch (error) {
+        res.status(404).send(error);
+        
     }
 })
 

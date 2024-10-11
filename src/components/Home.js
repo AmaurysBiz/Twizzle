@@ -1,26 +1,35 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import './Home.css';
+import { API } from '../Config/config';
 
 const Home = () => {
-  const [data, setData] = useState({ followers: 0, engagementRate: '', scheduledPostsCount: 0 });
+  const [data, setData] = useState({});
 
   // Fetch data from the backend API
+  const id = localStorage.getItem("userId");
+  const fetchData = () => {
+    try {
+      axios.get(`${API.apiUrl}/users/${id}`).then((res)=>{
+        console.log(res);
+        setData(res.data);
+      }).catch((e)=>{
+        console.log(e);
+      })
+   
+    } catch (error) {
+      console.error('Error fetching data:', error);
+    }
+  };
+
+
   useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const response = await axios.get('http://localhost:5000/api/data');  // Fetch from the server
-        setData(response.data);
-      } catch (error) {
-        console.error('Error fetching data:', error);
-      }
-    };
     fetchData();
   }, []);
 
   return (
     <div className="home-container">
-      <h1>Welcome back, [Username]!</h1>
+      <h1>Welcome back, {data.userName}!</h1>
       <p>Your personalized content management dashboard.</p>
       <div className="analytics-overview">
         <h2>Your Analytics Overview</h2>

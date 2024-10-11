@@ -23,6 +23,7 @@ const Login = () => {
       .then((res) => {
         console.log(res);
         NotificationManager.success("login successful!");
+        localStorage.setItem("userId", res.data._id);
         navigate("/home");
       })
       .catch((e) => {

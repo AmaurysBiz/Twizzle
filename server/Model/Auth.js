@@ -16,6 +16,39 @@ const authSchema = new mongoose.Schema({
     required: true,
     type: String,
   },
+
+  bio: {
+    type: String,
+  },
+
+  image: {
+    type: String,
+  },
+
+  userContent: {
+    userImages: [
+      {
+        image: {
+          type: String,
+        },
+        date: {
+          type: Date,
+          default: new Date(),
+        },
+      },
+    ],
+    userVideos: [
+      {
+        video: {
+          type: String,
+        },
+        date: {
+          type: Date,
+          default: new Date(),
+        },
+      },
+    ],
+  },
 });
 
 authSchema.pre("save", async function (next) {

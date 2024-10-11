@@ -1,28 +1,53 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
-import './Sidebar.css'; // Import appropriate CSS file
+import React from "react";
+import { Link, useNavigate } from "react-router-dom";
+import "./Sidebar.css"; // Import appropriate CSS file
 
 const Sidebar = () => {
+  const navigate = useNavigate();
+
+  const userId = localStorage.getItem("userId");
+
+  const logout = () => {
+    localStorage.removeItem("userId");
+    navigate("/");
+  };
+
   return (
     <div className="sidebar">
       {/* Logo at the top left */}
       <div className="logo">
-        <img src="/path-to-your-logo.png" alt="Logo" />  {/* Add your logo path */}
+        <img src="/path-to-your-logo.png" alt="Logo" />{" "}
+        {/* Add your logo path */}
       </div>
 
       {/* Sidebar links */}
-      <Link to="/home">Home</Link>
-      <Link to="/profile">Profile</Link>
-      <Link to="/analytics">Analytics</Link>
-      <Link to="/content-library">Library</Link>
-      <Link to="/schedule">Content Schedule</Link>
-      <Link to="/post-canvas">Post Canvas</Link>
-      <Link to="/video-canvas">Video Canvas</Link>
+
+      {userId && (
+        <>
+          <Link to="/home">Home</Link>
+          <Link to="/profile">Profile</Link>
+          <Link to="/analytics">Analytics</Link>
+          <Link to="/content-library">Library</Link>
+          <Link to="/usercontent">My Content</Link>
+          <Link to="/schedule">Content Schedule</Link>
+          <Link to="/post-canvas">Post Canvas</Link>
+          <Link to="/video-canvas">Video Canvas</Link>
+        </>
+      )}
+
       <Link to="/instagram">Instagram</Link>
       <Link to="/facebook">Facebook</Link>
 
       {/* Add Login/Logout and Register at the bottom */}
-      <Link to="/login">Login</Link>
+      {userId ? (
+        <>
+          <button onClick={() => logout()}>Logout</button>
+        </>
+      ) : (
+        <>
+          <Link to="/login">Login</Link>
+        </>
+      )}
       <Link to="/register">Register</Link>
     </div>
   );

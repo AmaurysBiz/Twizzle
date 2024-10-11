@@ -1,28 +1,46 @@
-import React from 'react';
-import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
-import Login from './Login';
-import Registration from './Registration';
-import Home from './components/Home';
-import Profile from './components/Profile'; 
-import Analytics from './components/Analytics'; 
-import ContentLibrary from './components/ContentLibrary'; 
-import ContentSchedule from './ContentSchedule';
-import Instagram from './components/instagram';
-import Facebook from './components/Facebook';
-import Sidebar from './components/Sidebar';
-import Canvas from './components/Canvas';
-import PostCanvas from './components/PostCanvas';
-import VideoCanvas from './components/VideoCanvas';
-import './App.css';
+import React from "react";
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route,
+  Navigate,
+} from "react-router-dom";
+import Login from "./Login";
+import Registration from "./Registration";
+import Home from "./components/Home";
+import Profile from "./components/Profile";
+import Analytics from "./components/Analytics";
+import ContentLibrary from "./components/ContentLibrary";
+import ContentSchedule from "./ContentSchedule";
+import Instagram from "./components/instagram";
+import Facebook from "./components/Facebook";
+import Sidebar from "./components/Sidebar";
+import Canvas from "./components/Canvas";
+import PostCanvas from "./components/PostCanvas";
+import VideoCanvas from "./components/VideoCanvas";
+import "./App.css";
+import UserContent from "./components/UserContent";
 
 function App() {
+  const id = localStorage.getItem("userId");
+
   return (
     <Router>
       <div className="App">
         <Sidebar />
         <div className="main-content">
           <Routes>
-            <Route path="/" element={<Navigate to="/login" />} />  {/* Now redirects to login */}
+            {id ? (
+              <>
+                <Route path="/" element={<Navigate to="/home" />} />{" "}
+                {/* Now redirects to login */}
+              </>
+            ) : (
+              <>
+                <Route path="/" element={<Navigate to="/login" />} />{" "}
+                {/* Now redirects to login */}
+              </>
+            )}
             <Route path="/home" element={<Home />} />
             <Route path="/profile" element={<Profile />} />
             <Route path="/analytics" element={<Analytics />} />
@@ -35,6 +53,7 @@ function App() {
             <Route path="/post-canvas" element={<PostCanvas />} />
             <Route path="/video-canvas" element={<VideoCanvas />} />
             <Route path="/canvas" element={<Canvas />} />
+            <Route path="/usercontent" element={<UserContent />} />
           </Routes>
         </div>
       </div>
