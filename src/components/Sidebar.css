@@ -10,7 +10,11 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    overflow: scroll;
+    scrollbar-width: none;
   }
+
+  body::-webkit-scrollbar, body::-webkit-scrollbar-button { display: none; } 
   
   .sidebar .logo {
     text-align: center;
