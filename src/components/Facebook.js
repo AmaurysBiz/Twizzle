@@ -32,21 +32,12 @@ const Facebook = () => {
     setUserData(null);
   };
 
-  const responseFacebook = (response) => {
-    console.log(response);
-  }
-
   return (
     <div className="facebook-container">
       <h2>Facebook API Integration</h2>
 
       {!isConnected ? (
-        <FacebookLogin
-        appId="833109238933624"
-        autoLoad={true}
-        fields="name,email,picture"
-        onClick={()=>{}}
-        callback={responseFacebook} />
+        <button onClick={handleConnect} className="connect-button">Connect Facebook</button>
       ) : (
         <>
           {/* Display user data */}
