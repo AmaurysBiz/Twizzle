@@ -1,6 +1,7 @@
 import React from "react";
 import { Link, useNavigate } from "react-router-dom";
 import "./Sidebar.css"; // Import appropriate CSS file
+import logo from "../Images/logo.webp";
 
 const Sidebar = () => {
   const navigate = useNavigate();
@@ -16,7 +17,7 @@ const Sidebar = () => {
     <div className="sidebar">
       {/* Logo at the top left */}
       <div className="logo">
-        <img src="/path-to-your-logo.png" alt="Logo" />{" "}
+        <img src={logo} alt="Logo"/>{" "}
         {/* Add your logo path */}
       </div>
 
