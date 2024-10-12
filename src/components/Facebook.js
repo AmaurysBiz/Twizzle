@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import './Facebook.css';
+import FacebookLogin from 'react-facebook-login';
+
 
 const Facebook = () => {
   const [isConnected, setIsConnected] = useState(false);
@@ -30,12 +32,21 @@ const Facebook = () => {
     setUserData(null);
   };
 
+  const responseFacebook = (response) => {
+    console.log(response);
+  }
+
   return (
     <div className="facebook-container">
       <h2>Facebook API Integration</h2>
 
       {!isConnected ? (
-        <button onClick={handleConnect} className="connect-button">Connect Facebook</button>
+        <FacebookLogin
+        appId="833109238933624"
+        autoLoad={true}
+        fields="name,email,picture"
+        onClick={()=>{}}
+        callback={responseFacebook} />
       ) : (
         <>
           {/* Display user data */}
