@@ -91,21 +91,25 @@ app.post("/webhook", (req, res) => {
   res.sendStatus(200);
 });
 
-app.get('/webhook', (req, res) => {
+app.get("/webhook", (req, res) => {
+  try {
     const VERIFY_TOKEN = "twizzle-token";
-    
-    const mode = req.query['hub.mode'];
-    const token = req.query['hub.verify_token'];
-    const challenge = req.query['hub.challenge'];
-    
+
+    const mode = req.query["hub.mode"];
+    const token = req.query["hub.verify_token"];
+    const challenge = req.query["hub.challenge"];
+
     if (mode && token === VERIFY_TOKEN) {
       // Respond with the challenge token from the request
       res.status(200).send(challenge);
     } else {
       // Respond with 403 Forbidden if tokens don't match
-      res.sendStatus(403);
+      res.sendStatus(403).send("Oops");
     }
-  });
+  } catch (error) {
+    res.status(404).send(error);
+  }
+});
 
 app.listen(PORT, () => {
   console.log("API is running on PORT: " + PORT);
